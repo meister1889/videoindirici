@@ -55,8 +55,7 @@ function makeApiRequest($url, $headers = [], $method = 'GET', $data = null) {
         }
     }
 
-    // For development/local testing. In production, provide a cacert path if needed.
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
 
     $response = curl_exec($ch);
     $error = curl_error($ch);
